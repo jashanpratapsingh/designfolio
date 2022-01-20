@@ -102,6 +102,6 @@ app.get("/videos/podcast.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/podcast.mp4")
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
 });
