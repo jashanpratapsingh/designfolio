@@ -39,7 +39,7 @@ app.get("/within-school", function(req, res) {
 });
 
 app.get("/inter-school", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/Inter-School.html")
+    res.sendFile(__dirname + "/public/subpages/Achievements/Inter-school.html")
 });
 
 app.get("/images/jashan.jpeg", function(req, res) {
