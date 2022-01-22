@@ -23,23 +23,23 @@ app.get("/about", function(req, res) {
 });
 
 app.get("/international", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/International.html")
+    res.render("international")
 });
 
 app.get("/national", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/National.html")
+    res.render("national")
 });
 
 app.get("/state", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/State.html")
+    res.render("state")
 });
 
 app.get("/within-school", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/Within-school.html")
+    res.render("within-school")
 });
 
 app.get("/inter-school", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/Inter-school.html")
+    res.render("inter-school")
 });
 
 app.get("/images/jashan.jpeg", function(req, res) {
