@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const app = express();
-const homePage = "index.html"
 
 app.set('view engine', 'ejs');
 
@@ -11,35 +10,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/index.html")
+    res.render("index")
 });
 
 app.get("/wip", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/wip.html")
+    res.render("wip")
 });
 
 app.get("/about", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/about.html")
+    res.render("about")
 });
 
 app.get("/international", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/International.html")
+    res.render("international")
 });
 
 app.get("/national", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/National.html")
+    res.render("national")
 });
 
 app.get("/state", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/State.html")
+    res.render("state")
 });
 
 app.get("/within-school", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/Within-school.html")
+    res.render("within-school")
 });
 
 app.get("/inter-school", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/Achievements/Inter-school.html")
+    res.render("inter-school")
 });
 
 app.get("/images/jashan.jpeg", function(req, res) {
