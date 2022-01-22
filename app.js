@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const app = express();
-const homePage = "index.html"
+const homePage = "index.h"
 
 app.set('view engine', 'ejs');
 
@@ -15,11 +15,11 @@ app.get("/", function(req, res) {
 });
 
 app.get("/wip", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/wip.html")
+    res.render("wip")
 });
 
 app.get("/about", function(req, res) {
-    res.sendFile(__dirname + "/public/subpages/about.html")
+    res.render("about")
 });
 
 app.get("/international", function(req, res) {
