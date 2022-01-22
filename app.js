@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const app = express();
-const homePage = "index.h"
 
 app.set('view engine', 'ejs');
 
