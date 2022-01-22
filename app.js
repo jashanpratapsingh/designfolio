@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/index.html")
+    res.render("index")
 });
 
 app.get("/wip", function(req, res) {
