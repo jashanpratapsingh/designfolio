@@ -22,7 +22,7 @@ app.get("/about", function(req, res) {
 });
 
 app.get("/international", function(req, res) {
-    res.render("international")
+    res.render("achievements")
 });
 
 app.get("/national", function(req, res) {
