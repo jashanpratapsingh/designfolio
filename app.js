@@ -26,7 +26,7 @@ app.get("/international", function(req, res) {
 });
 
 app.get("/national", function(req, res) {
-    res.render("national")
+    res.render("projects")
 });
 
 app.get("/state", function(req, res) {
