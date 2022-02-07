@@ -25,7 +25,7 @@ app.get("/international", function(req, res) {
     res.render("achievements")
 });
 
-app.get("/national", function(req, res) {
+app.get("/projects", function(req, res) {
     res.render("projects")
 });
 
