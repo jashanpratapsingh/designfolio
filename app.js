@@ -45,6 +45,10 @@ app.get("/images/jashan.jpeg", function(req, res) {
     res.sendFile(__dirname + "/images/jashan.jpeg")
 });
 
+app.get("/main.css", function(req, res) {
+    res.sendFile(__dirname + "/public/css/main.css")
+});
+
 app.get("/images/elonbiography.jpg", function(req, res) {
     res.sendFile(__dirname + "/images/elonbiography.jpg")
 });
