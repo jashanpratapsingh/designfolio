@@ -21,8 +21,8 @@ app.get("/about", function(req, res) {
     res.render("about")
 });
 
-app.get("/international", function(req, res) {
-    res.render("achievements")
+app.get("/publicate", function(req, res) {
+    res.render("publicate")
 });
 
 app.get("/projects", function(req, res) {
@@ -95,6 +95,10 @@ app.get("/images/timeline9.svg", function(req, res) {
 
 app.get("/images/weaknesses.png", function(req, res) {
     res.sendFile(__dirname + "/images/weaknesses.png")
+});
+
+app.get("/images/publicate.jpeg", function(req, res) {
+    res.sendFile(__dirname + "/images/publicate.jpeg")
 });
 
 app.get("/videos/podcast.mp4", function(req, res) {
