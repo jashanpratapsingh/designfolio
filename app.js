@@ -101,8 +101,25 @@ app.get("/images/publicate.jpeg", function(req, res) {
     res.sendFile(__dirname + "/images/publicate.jpeg")
 });
 
+app.get("/images/publicate1.png", function(req, res) {
+    res.sendFile(__dirname + "/images/publicate1.png")
+});
+
+app.get("/images/publicate2.png", function(req, res) {
+    res.sendFile(__dirname + "/images/publicate2.png")
+});
+
+app.get("/images/publicate3.png", function(req, res) {
+    res.sendFile(__dirname + "/images/publicate3.png")
+});
+
+
 app.get("/videos/podcast.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/podcast.mp4")
+});
+
+app.get("/videos/publicate.mp4", function(req, res) {
+    res.sendFile(__dirname + "/videos/publicate.mp4")
 });
 
 app.listen(process.env.PORT || 3000, function() {
