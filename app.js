@@ -122,6 +122,10 @@ app.get("/videos/publicate.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/publicate.mp4")
 });
 
+app.get("/google.html", function(req, res) {
+    res.sendFile(__dirname + "google471d19c69abb3abf.html")
+});
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
 });
