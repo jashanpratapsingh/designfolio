@@ -122,8 +122,24 @@ app.get("/videos/publicate.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/publicate.mp4")
 });
 
-app.get("/google.html", function(req, res) {
-    res.sendFile(__dirname + "google471d19c69abb3abf.html")
+app.get("/images/fonts/biotif.woff2", function(req, res) {
+    res.sendFile(__dirname + "/images/fonts/biotif.woff2")
+});
+
+app.get("/images/favicon-16x16.png", function(req, res) {
+    res.sendFile(__dirname + "/images/png/favicon-16x16.png")
+});
+
+app.get("/images/favicon-96x96.png", function(req, res) {
+    res.sendFile(__dirname + "/images/png/favicon-96x96.png")
+});
+
+app.get("/images/favicon-32x32.png", function(req, res) {
+    res.sendFile(__dirname + "/images/png/favicon-32x32.png")
+});
+
+app.get("/images/codewithme.png", function(req, res) {
+    res.sendFile(__dirname + "/images/png/codewithme.png")
 });
 
 app.listen(process.env.PORT || 3000, function() {
