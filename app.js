@@ -142,6 +142,10 @@ app.get("/images/codewithme.png", function(req, res) {
     res.sendFile(__dirname + "/images/png/codewithme.png")
 });
 
+app.get("/images/favicon/favicon.ico", function(req, res) {
+    res.sendFile(__dirname + "/images/favicon/favicon.ico")
+});
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
 });
