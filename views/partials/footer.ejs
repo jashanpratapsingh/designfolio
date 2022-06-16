@@ -47,6 +47,7 @@
             <button class="c-seanbot__button" data-question="1">👋&nbsp;&nbsp;I just wanted to say hello</button>
             <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
             <button class="c-seanbot__button" data-question="4">🤔&nbsp;&nbsp;Looking for your old site</button>
+            <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
         </div>
 
         <div id="c-new-content">
@@ -76,6 +77,7 @@
             <div class="c-seanbot__options">
                 <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
                 <button class="c-seanbot__button" data-question="4">🤔&nbsp;&nbsp;Looking for your old site</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
             </div>
         </div>
 
@@ -99,6 +101,7 @@
                 <button class="c-seanbot__button" data-question="6">✨&nbsp;&nbsp;Freelance</button>
                 <button class="c-seanbot__button" data-question="7">💼&nbsp;&nbsp;Organization</button>
                 <button class="c-seanbot__button" data-question="5">🤔&nbsp;&nbsp;Other options?</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
             </div>
         </div>
 
@@ -138,7 +141,7 @@
                 Unfortunately, the previous site is no longer available 😔
             </div>
             <div tabindex="-1" class="c-seanbot__agent">
-                My work has changed since the site was created almost a decade ago
+                My work has changed since the site was created almost a year ago
             </div>
             <div tabindex="-1" class="c-seanbot__agent">
                 I've updated it to better reflect my life, current work, and ambitions
@@ -153,6 +156,37 @@
             <div class="c-seanbot__options">
                 <button class="c-seanbot__button" data-question="1">👋&nbsp;&nbsp;I just wanted to say hello</button>
                 <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
+            </div>
+
+        </div>
+
+        <div class="c-seanbot__answer c-seanbot__answer--4" data-answer="4">
+
+            <div class="c-seanbot__user">
+                I'm looking for your old site
+            </div>
+
+            <div tabindex="-1" class="c-seanbot__agent">
+                Unfortunately, the previous site is no longer available 😔
+            </div>
+            <div tabindex="-1" class="c-seanbot__agent">
+                My work has changed since the site was created almost a year ago
+            </div>
+            <div tabindex="-1" class="c-seanbot__agent">
+                I've updated it to better reflect my life, current work, and ambitions
+            </div>
+            <div tabindex="-1" class="c-seanbot__agent">
+                Thanks for understanding
+            </div>
+            <div tabindex="-1" class="c-seanbot__agent">
+                Can I help you with anything else?
+            </div>
+
+            <div class="c-seanbot__options">
+                <button class="c-seanbot__button" data-question="1">👋&nbsp;&nbsp;I just wanted to say hello</button>
+                <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
             </div>
 
         </div>
@@ -171,27 +205,23 @@
                 <button class="c-seanbot__button" data-question="1">👋&nbsp;&nbsp;I just wanted to say hello</button>
                 <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
                 <button class="c-seanbot__button" data-question="4">🤔&nbsp;&nbsp;Looking for your old site</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
             </div>
 
         </div>
 
-        <div class="c-seanbot__answer c-seanbot__answer--6" data-answer="6">
+        <div class="c-seanbot__answer c-seanbot__answer--7" data-answer="7">
             <div tabindex="-1" class="c-seanbot__user">
-                Freelance
-            </div>
-            <div tabindex="-1" class="c-seanbot__agent">
-                Sorry, I'm not currently available for freelance projects
-            </div>
-            <div tabindex="-1" class="c-seanbot__agent">
-                Thanks for understanding
-            </div>
-            <div tabindex="-1" class="c-seanbot__agent">
-                Can I help you with anything else?
+                <form>
+                    <label for="query">Please enter your query:</label>
+                    <input type="text" id="query" name="query"><br><br>
+                </form>
             </div>
             <div class="c-seanbot__options">
                 <button class="c-seanbot__button" data-question="1">👋&nbsp;&nbsp;I just wanted to say hello</button>
                 <button class="c-seanbot__button" data-question="3">🤓&nbsp;&nbsp;Interested in mentorship</button>
                 <button class="c-seanbot__button" data-question="4">🤔&nbsp;&nbsp;Looking for your old site</button>
+                <button class="c-seanbot__button" data-question="7">🧐&nbsp;&nbsp;Any other query?</button>
             </div>
         </div>
     </div>
@@ -199,6 +229,18 @@
         <button class="c-seanbot__button js-beacon">💌&nbsp;&nbsp;Send a message</button>
         <button class="c-seanbot__button" data-question="5">🤔&nbsp;&nbsp;Other options?</button>
     </div>
+
+    <!-- this is where the textbox will fit -->
+    <div class="c-seanbot__answer">
+        <div class="c-seanbot__user" tabindex="-1">
+            <form>
+                <label for="query">Please enter your query:</label>
+                <input type="text" id="query" name="query"><br><br>
+            </form>
+        </div>
+    </div>
+
+
 </div>
 
 </div>

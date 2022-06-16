@@ -9,6 +9,25 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
+;
+(async() => {
+    const response = await openai.createCompletion({
+        model: "text-davinci-002",
+        prompt: "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: \nAI: Thank you for your question. As far as questions go, that wasn't one.\nHuman: How are you doing ?\nAI: Great, just doing my thing.\nHuman: ",
+        temperature: 0.9,
+        max_tokens: 150,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0.6,
+        stop: [" Human:", " AI:"],
+    });
+})();
+
 app.get("/", function(req, res) {
     res.render("index")
 });
