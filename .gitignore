@@ -105,3 +105,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# The example and env files
+*.env
+.env
+Procfile

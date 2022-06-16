@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 
 app.set('view engine', 'ejs');
