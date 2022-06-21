@@ -146,6 +146,10 @@ app.get("/images/favicon/favicon.ico", function(req, res) {
     res.sendFile(__dirname + "/images/favicon/favicon.ico")
 });
 
+app.get("/sitemap.xml", function(req, res) {
+    res.sendFile(__dirname + "/sitemap.xml")
+});
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
 });
