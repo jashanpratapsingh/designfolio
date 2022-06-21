@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://jashanpratapsingh.herokuapp.com/</loc>
+	<lastmod>2022-06-21T12:59:28+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://jashanpratapsingh.herokuapp.com/about</loc>
+	<lastmod>2022-06-21T12:59:28+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://jashanpratapsingh.herokuapp.com/wip</loc>
+	<lastmod>2022-06-21T12:59:28+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://jashanpratapsingh.herokuapp.com/publicate</loc>
+	<lastmod>2022-06-21T12:59:28+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://jashanpratapsingh.herokuapp.com/wip/</loc>
+	<lastmod>2022-06-21T12:59:29+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>
