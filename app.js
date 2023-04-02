@@ -61,6 +61,10 @@ app.get("/images/timeline1.svg", function(req, res) {
     res.sendFile(__dirname + "/images/timeline1.svg")
 });
 
+app.get("/public/css/styles.css", function(req, res) {
+    res.sendFile(__dirname + "/public/css/styles.css")
+});
+
 app.get("/images/timeline2.svg", function(req, res) {
     res.sendFile(__dirname + "/images/timeline2.svg")
 });
@@ -148,6 +152,10 @@ app.get("/images/favicon/favicon.ico", function(req, res) {
 
 app.get("/sitemap.xml", function(req, res) {
     res.sendFile(__dirname + "/sitemap.xml")
+});
+
+app.get("/scripts/main.js", function(req, res) {
+    res.sendFile(__dirname + "/public/javascript/main.js")
 });
 
 app.listen(process.env.PORT || 3000, function() {
