@@ -126,10 +126,6 @@ app.get("/videos/publicate.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/publicate.mp4")
 });
 
-app.get("/images/fonts/biotif.woff2", function(req, res) {
-    res.sendFile(__dirname + "/images/fonts/biotif.woff2")
-});
-
 app.get("/images/favicon-16x16.png", function(req, res) {
     res.sendFile(__dirname + "/images/png/favicon-16x16.png")
 });
