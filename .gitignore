@@ -112,3 +112,4 @@ dist
 Procfile
 node_modules/
 node_modules/
+.vercel
