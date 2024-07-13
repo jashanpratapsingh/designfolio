@@ -154,8 +154,8 @@ app.get("/scripts/main.js", function(req, res) {
     res.sendFile(__dirname + "/public/javascript/main.js")
 });
 
-app.listen(process.env.PORT || 5000, function() {
-    console.log("Server started on port 5000");
-});
+// app.listen(process.env.PORT || 3010, function() {
+//     console.log("Server started on port 3010");
+// });
 
 module.exports = app;
