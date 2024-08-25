@@ -156,7 +156,13 @@ app.get("/scripts/main.js", function(req, res) {
 
 app.get("/images/speek.png", function(req, res) {
     res.sendFile(__dirname + "/images/speek.png")
-})
+});
+
+app.get("/images/Simon_game.png", function(req, res) {
+    res.sendFile(__dirname + "/images/Simon_game.png")
+});
+
+
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
