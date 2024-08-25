@@ -166,6 +166,10 @@ app.get("/images/2048.png", function(req, res) {
     res.sendFile(__dirname + "/images/2048.png")
 });
 
+app.get("/images/to_do_list.png", function(req, res) {
+    res.sendFile(__dirname + "/images/to_do_list.png")
+});
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
 });
