@@ -162,9 +162,9 @@ app.get("/images/Simon_game.png", function(req, res) {
     res.sendFile(__dirname + "/images/Simon_game.png")
 });
 
-
-
-
+app.get("/images/2048.png", function(req, res) {
+    res.sendFile(__dirname + "/images/2048.png")
+});
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
