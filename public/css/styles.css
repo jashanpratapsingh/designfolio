@@ -6925,7 +6925,7 @@ a:hover .c-logo__iris {
 .c-tile__img {
     position: relative;
     transition: all .4s ease-in-out;
-    max-width: 100%;
+    max-width: 300%;
     display: inline-block
 }
 
