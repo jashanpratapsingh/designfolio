@@ -7,7 +7,11 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "serve": "nodemon app.js",
         "start": "node app.js",
-        "build": "echo 'Build step completed'"
+        "build": "echo 'Build step completed'",
+        "vercel-build": "echo 'Build step completed'"
+    },
+    "engines": {
+        "node": ">=14.0.0"
     },
     "repository": {
         "type": "git",
