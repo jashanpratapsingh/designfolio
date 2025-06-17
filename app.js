@@ -4,7 +4,22 @@ const ejs = require("ejs");
 const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 
+// Add CSP headers
+app.use((req, res, next) => {
+    res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://vercel.live;"
+    );
+    next();
+});
+
 app.set('view engine', 'ejs');
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -178,6 +193,17 @@ app.get("/images/3hbets.png", function(req, res) {
     res.sendFile(__dirname + "/images/3hbets.png")
 });
 
-app.listen(process.env.PORT || 3000, function() {
-    console.log("Server started on port 3000");
+// Add a catch-all route for 404s
+app.use((req, res) => {
+    res.status(404).render('404');
+});
+
+// Modify the listen call to include error handling
+const port = process.env.PORT || 3000;
+app.listen(port, function(err) {
+    if (err) {
+        console.error('Error starting server:', err);
+        return;
+    }
+    console.log(`Server started on port ${port}`);
 });
