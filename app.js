@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const { Configuration, OpenAIApi } = require("openai");
+const path = require("path");
 const app = express();
 
 // Add CSP headers
@@ -13,19 +14,42 @@ app.use((req, res, next) => {
     next();
 });
 
+// Set view engine and views directory
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
+    console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        path: req.path,
+        method: req.method
+    });
+    res.status(500).send('Something broke! Please check the server logs.');
 });
 
+// Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/videos', express.static(path.join(__dirname, 'videos')));
+
+// Log all requests
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+    next();
+});
 
 app.get("/", function(req, res) {
-    res.render("index")
+    try {
+        res.render("index");
+    } catch (error) {
+        console.error('Error rendering index:', error);
+        res.status(500).send('Error rendering page');
+    }
 });
 
 app.get("/wip", function(req, res) {
@@ -132,7 +156,6 @@ app.get("/images/publicate3.png", function(req, res) {
     res.sendFile(__dirname + "/images/publicate3.png")
 });
 
-
 app.get("/videos/podcast.mp4", function(req, res) {
     res.sendFile(__dirname + "/videos/podcast.mp4")
 });
@@ -193,12 +216,23 @@ app.get("/images/3hbets.png", function(req, res) {
     res.sendFile(__dirname + "/images/3hbets.png")
 });
 
+// Test route
+app.get("/test", function(req, res) {
+    res.json({
+        status: "ok",
+        message: "Server is running",
+        environment: process.env.NODE_ENV,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Add a catch-all route for 404s
 app.use((req, res) => {
+    console.log(`404 - Not Found: ${req.path}`);
     res.status(404).render('404');
 });
 
-// Modify the listen call to include error handling
+// Start server with error handling
 const port = process.env.PORT || 3000;
 app.listen(port, function(err) {
     if (err) {
@@ -206,4 +240,6 @@ app.listen(port, function(err) {
         return;
     }
     console.log(`Server started on port ${port}`);
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('Current directory:', __dirname);
 });
