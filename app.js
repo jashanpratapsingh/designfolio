@@ -5,11 +5,16 @@ const { Configuration, OpenAIApi } = require("openai");
 const path = require("path");
 const app = express();
 
-// Add CSP headers
+// Add CSP headers with more permissive settings for development
 app.use((req, res, next) => {
     res.setHeader(
         'Content-Security-Policy',
-        "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://vercel.live;"
+        "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; " +
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; " +
+        "style-src 'self' 'unsafe-inline' https: data:; " +
+        "img-src 'self' data: https:; " +
+        "font-src 'self' data: https:; " +
+        "connect-src 'self' https:;"
     );
     next();
 });
@@ -18,24 +23,38 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error('Error details:', {
-        message: err.message,
-        stack: err.stack,
-        path: req.path,
-        method: req.method
-    });
-    res.status(500).send('Something broke! Please check the server logs.');
-});
+// Serve static files with proper caching
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '1d',
+    etag: true
+}));
+
+// Serve images directory
+app.use('/images', express.static(path.join(__dirname, 'images'), {
+    maxAge: '1d',
+    etag: true
+}));
+
+// Serve videos directory
+app.use('/videos', express.static(path.join(__dirname, 'videos'), {
+    maxAge: '1d',
+    etag: true
+}));
+
+// Serve favicon directory
+app.use('/images/favicon', express.static(path.join(__dirname, 'images/favicon'), {
+    maxAge: '1d',
+    etag: true
+}));
+
+// Serve PNG directory
+app.use('/images/png', express.static(path.join(__dirname, 'images/png'), {
+    maxAge: '1d',
+    etag: true
+}));
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/videos', express.static(path.join(__dirname, 'videos')));
 
 // Log all requests
 app.use((req, res, next) => {
@@ -230,6 +249,17 @@ app.get("/test", function(req, res) {
 app.use((req, res) => {
     console.log(`404 - Not Found: ${req.path}`);
     res.status(404).render('404');
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        path: req.path,
+        method: req.method
+    });
+    res.status(500).send('Something broke! Please check the server logs.');
 });
 
 // Start server with error handling
